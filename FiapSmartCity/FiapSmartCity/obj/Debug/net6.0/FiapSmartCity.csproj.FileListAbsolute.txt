@@ -43,3 +43,6 @@ C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.
 C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
