@@ -1,4 +1,5 @@
 using FiapSmartCity.DTO;
+using FiapSmartCity.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiapSmartCity.Controllers
@@ -7,18 +8,17 @@ namespace FiapSmartCity.Controllers
     [Route("busca-bairro")]
     public class SmartCityController : ControllerBase
     {
+        private ScriptService _scriptService;
 
-        private readonly ILogger<SmartCityController> _logger;
-
-        public SmartCityController(ILogger<SmartCityController> logger)
+        public SmartCityController(ScriptService scriptService)
         {
-            _logger = logger;
+            _scriptService = scriptService;
         }
 
         [HttpPost]
         [Consumes("application/json")]
         [Produces("application/json")]
-        public IActionResult Post([FromBody] Endereco endereco) {
-
+        public IActionResult Post([FromBody] Pesquisa pesquisa) {
+            scriptService.
     }
 }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rLm1NK9FaFBnCsOH+snAU+7j0CV13EOAxid7dvN5zxBXH3a4crzmT+xuRXNZxHAjkkwELH5aCdSngqXGz8znoA==",
+  "dgSpecHash": "Ie8/AnL7VPFGQQmquM7pfbAe/Uo53mbeHPQ17n1QUP55HGntB6zZOB5GkZKr7DSg8DTSqYisi0jvTKapT1paMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\FiapSmartCity.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\carol\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
     "C:\\Users\\carol\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
     "C:\\Users\\carol\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
     "C:\\Users\\carol\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.9\\microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",
