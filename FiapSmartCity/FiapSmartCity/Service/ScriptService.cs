@@ -31,6 +31,8 @@ namespace FiapSmartCity.Service
 
             }
 
+            //TODO criar método para rodar o script do Python
+
             using (var reader = new StreamReader("../../../../../Properties/coordenadas.csv")) 
 
             using (var csv = new CsvReader(reader, config))
