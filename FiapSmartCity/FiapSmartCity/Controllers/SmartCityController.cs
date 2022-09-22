@@ -18,7 +18,10 @@ namespace FiapSmartCity.Controllers
         [HttpPost]
         [Consumes("application/json")]
         [Produces("application/json")]
-        public IActionResult Post([FromBody] Pesquisa pesquisa) {
-            scriptService.
+        public IActionResult Post([FromBody] Pesquisa pesquisa)
+        {
+            _scriptService.Resultado(pesquisa);
+            return Ok();
+        }
     }
 }
