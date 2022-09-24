@@ -8,7 +8,7 @@ namespace FiapSmartCity.Controllers
     [Route("busca-bairro")]
     public class SmartCityController : ControllerBase
     {
-        private ScriptService _scriptService;
+        private readonly ScriptService _scriptService;
 
         public SmartCityController(ScriptService scriptService)
         {
@@ -20,8 +20,7 @@ namespace FiapSmartCity.Controllers
         [Produces("application/json")]
         public IActionResult Post([FromBody] Pesquisa pesquisa)
         {
-            _scriptService.Resultado(pesquisa);
-            return Ok();
+            return Ok(_scriptService.Resultado(pesquisa));
         }
     }
 }

@@ -4,7 +4,7 @@ import pandas as pds
 
 df = pds.read_csv("../../../../../Properties/converter.csv", encoding='UTF8')
 
-geolocator = GoogleV3(api_key="AIzaSyBlK_WTi2NnoLIL-daBjPpRFjY0cn0aW5A")
+geolocator = GoogleV3(api_key="AIzaSyCwaZgsNyb36X4_m0103cb3pzRaTISB2Lw")
 location = geolocator.geocode(df["endereço"])
 
 print(location.raw)
