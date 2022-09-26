@@ -8,7 +8,7 @@ namespace FiapSmartCity.Controllers
 {
 
 
-    [Route("api/[controller]")]
+    [Route("/busca-endereco")]
     [ApiController]
     public class BuscaEnderecoController : ControllerBase
     {
