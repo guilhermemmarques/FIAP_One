@@ -3,25 +3,29 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http.Headers;
+using System.Security.Cryptography.Xml;
 
 
 namespace FiapSmartCity.Service
 {
     public class ScriptService
     {
-        public List<T> Resultado(Pesquisa pesquisa)
+        private readonly ApiService _apiService;
+        public ScriptService(ApiService apiService)
+        {
+            _apiService = apiService;
+        }
+
+        public IEnumerable<DataObject> Resultado(Pesquisa pesquisa)
         {
             var coordenadas = ConverterCsv(pesquisa);
-            return ChamarApiGoogle(coordenadas, pesquisa.Segmento);
+            return _apiService.ChamarApiGoogle(coordenadas, pesquisa.Segmento);
 
         }
 
-        private static Coordenadas ConverterCsv(Pesquisa pesquisa)
+        private static IEnumerable<Coordenadas> ConverterCsv(Pesquisa pesquisa)
         {
-            var coordenadas;
+            IEnumerable<Coordenadas> coordenadas;
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = true
@@ -63,20 +67,7 @@ namespace FiapSmartCity.Service
             Process.Start("CMD.exe", comando);
         }
 
-        private List<T> ChamarApiGoogle(Coordenadas coordenadas, string segmento)
-        { }
-        private string url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-        private string urlParametros = $"?location={coordenadas.Latitude}2C{coordenadas.Longitude}&type={segmento}&api_key=AIzaSyCwaZgsNyb36X4_m0103cb3pzRaTISB2Lw";
-        HttpClient client = new HttpClient();
-        client.BaseAddress = new Uri(url);
-        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = client.GetAsync(urlParametros).Result;
-            if (response.IsSuccessStatusCode)
-            {return response.Content.ReadAsAsync<IEnumerable<DataObject>>().Result;}
-        }
+    }
 
-    }   
 }
-
-

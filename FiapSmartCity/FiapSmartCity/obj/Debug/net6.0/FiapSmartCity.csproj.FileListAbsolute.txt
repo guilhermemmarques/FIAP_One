@@ -46,3 +46,6 @@ C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.
 C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\carol\source\repos\FIAP_One\FiapSmartCity\FiapSmartCity\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
