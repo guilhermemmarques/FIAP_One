@@ -14,9 +14,9 @@ namespace FiapSmartCity.DAL
         {
             Endereco PresidenteJoseLinhares = new Endereco();
             PresidenteJoseLinhares.IdEndereco = 345;
-            PresidenteJoseLinhares.DescEnderecos = "Presidente José Linhares, 234";
+            PresidenteJoseLinhares.DescEnderecos = "Presidente José Linhares, 555";
             PresidenteJoseLinhares.CEP = 09345654;
-            PresidenteJoseLinhares.UF = "SP";
+            PresidenteJoseLinhares.UF = "RJ";
 
             bdBuscaEnderecos.Add(1, PresidenteJoseLinhares);
 
@@ -29,9 +29,9 @@ namespace FiapSmartCity.DAL
             bdBuscaEnderecos.Add(contadorBanco, Endereco);
         }
 
-        public Endereco Consultar( string DescEnderecos)
+        public Endereco Consultar( int IdEndereco)
         {
-            return bdBuscaEnderecos[DescEnderecos];
+            return bdBuscaEnderecos[IdEndereco];
         }
 
         public IList<Endereco> Listar()

@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace FiapSmartCity.Controllers
 {
 
+
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("busca-endereco")]
     public class BuscaEnderecoController : ControllerBase
     {
         private readonly BuscaEnderecoDAL buscaEnderecoDAL;
@@ -18,12 +19,12 @@ namespace FiapSmartCity.Controllers
             buscaEnderecoDAL = new BuscaEnderecoDAL();
         }
 
-        [HttpGet("{DescEnderecos:string}")]
-        public ActionResult <Endereco> Get([FromRoute] string DescEnderecos)
+        [HttpGet("{IdEndereco:int}")]
+        public ActionResult <Endereco> Get([FromRoute] int IdEndereco)
         {
             try
             {
-                Endereco endereco = buscaEnderecoDAL.Consultar(DescEnderecos);
+                Endereco endereco = buscaEnderecoDAL.Consultar(IdEndereco);
                 return Ok(endereco);
             } catch (KeyNotFoundException e)
             {
