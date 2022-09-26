@@ -6842,23 +6842,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carol\\.nuget\\packages\\": {},
+    "C:\\Users\\guilh\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\FiapSmartCity.csproj",
+      "projectUniqueName": "C:\\Users\\guilh\\Source\\Repos\\guilhermemmarques\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\FiapSmartCity.csproj",
       "projectName": "FiapSmartCity",
-      "projectPath": "C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\FiapSmartCity.csproj",
-      "packagesPath": "C:\\Users\\carol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\obj\\",
+      "projectPath": "C:\\Users\\guilh\\Source\\Repos\\guilhermemmarques\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\FiapSmartCity.csproj",
+      "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guilh\\Source\\Repos\\guilhermemmarques\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\carol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6926,7 +6926,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

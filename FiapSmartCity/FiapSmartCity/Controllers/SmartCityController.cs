@@ -1,3 +1,4 @@
+using FiapSmartCity.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiapSmartCity.Controllers
@@ -6,28 +7,12 @@ namespace FiapSmartCity.Controllers
     [Route("[controller]")]
     public class SmartCityController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        [HttpGet]
+        [Route("/termos-uso")]
+        public ActionResult<TermosUso> Get()
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-        private readonly ILogger<SmartCityController> _logger;
-
-        public SmartCityController(ILogger<SmartCityController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            TermosUso termos = new TermosUso();
+            return Ok(termos.RetornaTermo());
         }
     }
 }
