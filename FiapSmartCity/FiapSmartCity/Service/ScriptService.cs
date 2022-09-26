@@ -8,10 +8,10 @@ using System.Security.Cryptography.Xml;
 
 namespace FiapSmartCity.Service
 {
-    public class ScriptService
+    public class ScriptService : IPythonService
     {
-        private readonly ApiService _apiService;
-        public ScriptService(ApiService apiService)
+        private readonly IGoogleService _apiService;
+        public ScriptService(IGoogleService apiService)
         {
             _apiService = apiService;
         }
@@ -30,7 +30,7 @@ namespace FiapSmartCity.Service
             {
                 HasHeaderRecord = true
             };
-            using (var writer = new StreamWriter("../../../../../Properties/converter.csv"))
+            using (var writer = new StreamWriter("C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\Properties\\converter.csv"))
             using (var csv = new CsvWriter(writer, config))
             {
                 csv.WriteHeader<Pesquisa>();
@@ -41,15 +41,17 @@ namespace FiapSmartCity.Service
 
             RodarScript();
 
-            using (var reader = new StreamReader("../../../../../Properties/coordenadas.csv"))
+            using (var reader = new StreamReader("C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\Properties\\coordenadas.csv"))
 
             using (var csv = new CsvReader(reader, config))
             {
                 coordenadas = csv.GetRecords<Coordenadas>();
+                foreach(var coordenada in coordenadas)
+                {
+                    yield return coordenada;
+                }
 
             }
-
-            return coordenadas;
         }
 
         private static void RodarScript()

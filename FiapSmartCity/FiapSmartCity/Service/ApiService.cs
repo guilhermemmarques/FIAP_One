@@ -4,14 +4,14 @@ using System.Security.Cryptography.Xml;
 
 namespace FiapSmartCity.Service
 {
-    public class ApiService
+    public class ApiService : IGoogleService
     {
         private readonly string url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 
         public IEnumerable<DataObject> ChamarApiGoogle(IEnumerable<Coordenadas> coordenadas, string segmento)
         {
             var coordenada = coordenadas.First();
-            string urlParametros = $"?location={coordenada.Latitude}2C{coordenada.Latitude}&type={segmento}&api_key=AIzaSyCwaZgsNyb36X4_m0103cb3pzRaTISB2Lw";
+            string urlParametros = $"?location={coordenada.Latitude}2C{coordenada.Longitude}&type={segmento}&api_key=AIzaSyCwaZgsNyb36X4_m0103cb3pzRaTISB2Lw";
 
             HttpClient client = new()
             {

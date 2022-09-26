@@ -6,7 +6,7 @@ namespace FiapSmartCity.DTO
     {
         [Name("latitude")]
         public string Latitude { get; set; }
-        [Name("longetitude")]
+        [Name("longitude")]
         public string Longitude { get; set; }
 
         public Coordenadas(string latitude, string longitude)

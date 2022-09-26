@@ -14,5 +14,6 @@ print(coordenadas)
 
 saida = open("../../../../../Properties/coordenadas.csv", 'w', newline='')
 escrever = csv.writer(saida)
+escrever.writerow("latitude","longitude")
 escrever.writerow(coordenadas)
 saida.close()

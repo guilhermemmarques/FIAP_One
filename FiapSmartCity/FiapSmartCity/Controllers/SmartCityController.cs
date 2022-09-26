@@ -8,9 +8,9 @@ namespace FiapSmartCity.Controllers
     [Route("busca-bairro")]
     public class SmartCityController : ControllerBase
     {
-        private readonly ScriptService _scriptService;
+        private readonly IPythonService _scriptService;
 
-        public SmartCityController(ScriptService scriptService)
+        public SmartCityController(IPythonService scriptService)
         {
             _scriptService = scriptService;
         }
