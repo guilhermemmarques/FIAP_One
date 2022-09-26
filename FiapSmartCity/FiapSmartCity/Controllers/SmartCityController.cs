@@ -1,33 +1,27 @@
+using FiapSmartCity.DTO;
+using FiapSmartCity.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FiapSmartCity.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class SmartCityController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        private readonly IPythonService _scriptService;
 
-        private readonly ILogger<SmartCityController> _logger;
-
-        public SmartCityController(ILogger<SmartCityController> logger)
+        public SmartCityController(IPythonService scriptService)
         {
-            _logger = logger;
+            _scriptService = scriptService;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpPost]
+        [Consumes("application/json")]
+        [Produces("application/json")]
+        [Route("busca-bairro")]
+
+        public IActionResult Post([FromBody] Pesquisa pesquisa)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok(_scriptService.Resultado(pesquisa));
         }
     }
 }
