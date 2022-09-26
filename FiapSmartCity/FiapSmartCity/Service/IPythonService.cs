@@ -5,6 +5,6 @@ namespace FiapSmartCity.Service
 {
     public interface IPythonService
     {
-        IEnumerable<DataObject> Resultado(Pesquisa pesquisa);
+        IEnumerable<Result> Resultado(Pesquisa pesquisa);
     }
 }

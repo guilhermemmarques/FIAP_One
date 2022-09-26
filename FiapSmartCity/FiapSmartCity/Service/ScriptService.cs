@@ -3,7 +3,7 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Diagnostics;
-using System.Security.Cryptography.Xml;
+using System.IO;
 
 
 namespace FiapSmartCity.Service
@@ -16,10 +16,10 @@ namespace FiapSmartCity.Service
             _apiService = apiService;
         }
 
-        public IEnumerable<DataObject> Resultado(Pesquisa pesquisa)
+        public IEnumerable<Result> Resultado(Pesquisa pesquisa)
         {
             var coordenadas = ConverterCsv(pesquisa);
-            return _apiService.ChamarApiGoogle(coordenadas, pesquisa.Segmento);
+            return _apiService.ChamarApiGoogleAsync(coordenadas, pesquisa.Segmento);
 
         }
 
@@ -30,7 +30,7 @@ namespace FiapSmartCity.Service
             {
                 HasHeaderRecord = true
             };
-            using (var writer = new StreamWriter("C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\Properties\\converter.csv"))
+            using (var writer = new StreamWriter("Properties\\converter.csv"))
             using (var csv = new CsvWriter(writer, config))
             {
                 csv.WriteHeader<Pesquisa>();
@@ -41,7 +41,7 @@ namespace FiapSmartCity.Service
 
             RodarScript();
 
-            using (var reader = new StreamReader("C:\\Users\\carol\\source\\repos\\FIAP_One\\FiapSmartCity\\FiapSmartCity\\Properties\\coordenadas.csv"))
+            using (var reader = new StreamReader("Properties\\coordenadas.csv"))
 
             using (var csv = new CsvReader(reader, config))
             {

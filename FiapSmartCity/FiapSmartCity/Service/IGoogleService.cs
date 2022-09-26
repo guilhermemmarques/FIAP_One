@@ -5,6 +5,6 @@ namespace FiapSmartCity.Service
 {
     public interface IGoogleService
     {
-        IEnumerable<DataObject> ChamarApiGoogle(IEnumerable<Coordenadas> coordenadas, string segmento);
+        IEnumerable<Result> ChamarApiGoogleAsync(IEnumerable<Coordenadas> coordenadas, string segmento);
     }
 }

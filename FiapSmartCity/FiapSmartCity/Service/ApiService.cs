@@ -1,6 +1,7 @@
 ﻿using FiapSmartCity.DTO;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.Xml;
+using System.Text.Json;
 
 namespace FiapSmartCity.Service
 {
@@ -8,7 +9,7 @@ namespace FiapSmartCity.Service
     {
         private readonly string url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 
-        public IEnumerable<DataObject> ChamarApiGoogle(IEnumerable<Coordenadas> coordenadas, string segmento)
+        public IEnumerable<Result> ChamarApiGoogleAsync(IEnumerable<Coordenadas> coordenadas, string segmento)
         {
             var coordenada = coordenadas.First();
             string urlParametros = $"?location={coordenada.Latitude}2C{coordenada.Longitude}&type={segmento}&api_key=AIzaSyCwaZgsNyb36X4_m0103cb3pzRaTISB2Lw";
@@ -21,8 +22,8 @@ namespace FiapSmartCity.Service
 
             HttpResponseMessage response = client.GetAsync(urlParametros).Result;
             if (response.IsSuccessStatusCode)
-            { return response.Content.ReadAsAsync<IEnumerable<DataObject>>().Result; }
-            else { return Enumerable.Empty<DataObject>(); }
+            { return response.Content.ReadAsAsync<IEnumerable<Result>>().Result; }
+            else { return Enumerable.Empty<Result>(); }
         }
 
 
